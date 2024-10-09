@@ -1,9 +1,15 @@
 # clone this website and extract the data 
-import requests,asyncio,telegram,datetime
+import requests,asyncio,telegram,datetime,os
+from dotenv import load_dotenv
+
+load_dotenv()
+apikey=os.getenv("BOTAPIKEY")
+channel_id=os.getenv("CHATID")
+
+# Create a Bot Object
+bot = telegram.Bot(token=apikey)
 
 
-bot = telegram.Bot(token='7400655935:AAG7X6LSfYDZZJWQQRU0wLyGoHkwdoaH17k')
-channel_id = '-1002230730569'
 
 # Function to send messages
 async def send_message(message):
